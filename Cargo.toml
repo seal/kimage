@@ -4,8 +4,11 @@ version = "0.1.0"
 edition = "2021"
 authors = ["William Kimbell <will@kimbell.uk>"]
 description = "A simple image upload and serve service"
+repository = "https://github.com/seal/kimage"
+homepage = "https://github.com/seal/kimage"
 license = "MIT"
-repository = "https://github.com/seal/kiamge"
+keywords = ["image-upload", "upload", "image"]
+categories = ["image"]
 
 [[bin]]
 name = "kimage"
