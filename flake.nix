@@ -31,6 +31,7 @@
               fd
               rust-bin.stable.latest.default
               rust-analyzer
+              rustup
               cargo-watch
               pkgs.sqlite
               pkgs.bunyan-rs

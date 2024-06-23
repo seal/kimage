@@ -9,6 +9,11 @@ homepage = "https://github.com/seal/kimage"
 license = "MIT"
 keywords = ["image-upload", "upload", "image"]
 categories = ["image"]
+exclude = [
+    ".direnv/*",
+    ".envrc",
+]
+
 
 [[bin]]
 name = "kimage"
