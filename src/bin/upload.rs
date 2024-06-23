@@ -5,7 +5,6 @@
 use anyhow::{anyhow, Context, Result};
 use base64::{engine::general_purpose, Engine as _};
 use clap::Parser;
-use clipboard::{ClipboardContext, ClipboardProvider};
 use dirs::home_dir;
 use image::ImageOutputFormat;
 use log::{error, info};
@@ -84,14 +83,6 @@ async fn main() -> Result<()> {
         .to_string();
 
     info!("Image uploaded successfully. URL: {}", url);
-
-    // Copy the URL to the clipboard
-    let mut ctx: ClipboardContext = ClipboardProvider::new()
-        .map_err(|e| anyhow!("Failed to initialize clipboard context: {}", e))?;
-    ctx.set_contents(url.clone())
-        .map_err(|e| anyhow!("Failed to copy URL to clipboard: {}", e))?;
-
-    info!("URL copied to clipboard.");
 
     Ok(())
 }
