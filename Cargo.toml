@@ -1,0 +1,35 @@
+[package]
+name = "kimage"
+version = "0.1.0"
+edition = "2021"
+authors = ["William Kimbell <will@kimbell.uk>"]
+description = "A simple image upload and serve service"
+license = "MIT"
+repository = "https://github.com/seal/kiamge"
+
+[[bin]]
+name = "kimage"
+path = "src/bin/upload.rs"
+
+[[bin]]
+name = "kimage-serve"
+path = "src/bin/serve.rs"
+
+[dependencies]
+tokio = { version = "1.28", features = ["full"] }
+actix-web = "4.3"
+actix-multipart = "0.6"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+toml = "0.7"
+rand = "0.8"
+image = "0.24"
+base64 = "0.21"
+dirs = "5.0"
+clap = { version = "4.3", features = ["derive"] }
+anyhow = "1.0"
+clipboard = "0.5"
+reqwest = {version="0.12.5", features = ["json", "multipart"]}
+futures = "0.3.30"
+pretty_env_logger = "0.5.0"
+log = "0.4.21"
