@@ -24,6 +24,8 @@ struct Config {
     api_key: String,
     /// Path to store uploaded images
     storage_path: PathBuf,
+    /// URL of server
+    server_url: String,
 }
 
 /// Response structure for successful uploads
@@ -86,7 +88,7 @@ async fn upload(req: HttpRequest, mut payload: Multipart) -> Result<HttpResponse
                 })?;
 
                 // Construct and return the URL of the uploaded image
-                let url = format!("http://localhost:{}/{}", config.port, filename);
+                let url = format!("{}/{}", config.server_url, filename);
                 info!("File uploaded successfully: {}", url);
                 return Ok(HttpResponse::Ok().json(UploadResponse { url }));
             }
@@ -173,4 +175,3 @@ fn generate_filename() -> String {
         .collect();
     format!("{}.png", random_string)
 }
-
